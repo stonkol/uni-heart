@@ -1,4 +1,3 @@
-HTML SCSSResult Skip Results Iframe
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 @mixin unselectable {
@@ -57,14 +56,14 @@ font-family: 'Josefin Slab', serif;
 
 #IN {
     cursor: grab;
-    -webkit-animation-name: heartChange;  
-    -webkit-animation-iteration-count: infinite;  
-    -webkit-animation-duration: 1.6s; 
+    animation-name: heartChange;  
+    animation-iteration-count: infinite;  
+    animation-duration: 1.6s; 
 }
 #HEART {
   cursor: help;
 }
-@-webkit-keyframes heartChange {  
+@keyframes heartChange {  
   0% { fill: white;}
   45% { fill: white; }
   51% { fill: red;}
@@ -72,17 +71,11 @@ font-family: 'Josefin Slab', serif;
 }
 
 #text { 
-  @include unselectable();    // to make the text unselectable
+  @include unselectable();    /*to make the text unselectable*/
   color: white;
-    cursor: help; // avoid cursor change to caret 
-  /////// more types of cursor
-  // cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer;
+    cursor: help; /* avoid cursor change to caret */
+/* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
 
 
-// made smaller when is computer screen
-
-View Compiled
-
-
-Resources1× 0.5× 0.25×Rerun
+/* made smaller when is computer screen*/

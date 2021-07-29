@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+* {
+  cursor: not-allowed;
+}
+
+body {
+  margin: 37px;
+  padding: 0;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FEFBE7;
+  font-family: 'Josefin Slab', serif;
+  font-size: 10px;
+}
+
+#IN {
+  cursor: grab;
+  animation-name: heartChange;
+  animation-iteration-count: infinite;
+  animation-duration: 1.6s;
+}
+
+#HEART {
+  cursor: help;
+}
+
+@keyframes heartChange {
+  0% {
+    fill: white;
+  }
+  45% {
+    fill: white;
+  }
+  51% {
+    fill: red;
+  }
+  100% {
+    k: black;
+  }
+}
+
+#text {
+  user-select: none;
+  /*to make the text unselectable*/
+  color: white;
+  cursor: help;
+  /* avoid cursor change to caret */
+  /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
+}
+
+/* made smaller when is computer screen*/
