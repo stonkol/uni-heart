@@ -1,0 +1,88 @@
+HTML SCSSResult Skip Results Iframe
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+@mixin unselectable {
+  -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+
+* {
+  cursor: not-allowed;
+}
+body {
+  //@include flexbox();
+  //@include align-items(center);
+  //@include justify-content(center);
+  margin: 37px;
+  padding: 0;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#FEFBE7; //#6666FF;
+font-family: 'Josefin Slab', serif;
+  font-size: 10px;
+}
+// made smaller when is computer screen
+@media all and (max-width: 400px) {
+  body {
+    
+  }    
+}
+
+
+#IN {
+    cursor: grab;
+    -webkit-animation-name: heartChange;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 1.6s; 
+}
+#HEART {
+  cursor: help;
+}
+@-webkit-keyframes heartChange {  
+  0% { fill: white;}
+  45% { fill: white; }
+  51% { fill: red;}
+  100% { k: black; } // 
+}
+
+#text { 
+  @include unselectable();    // to make the text unselectable
+  color: white;
+    cursor: help; // avoid cursor change to caret 
+  /////// more types of cursor
+  // cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer;
+}
+
+
+// made smaller when is computer screen
+
+View Compiled
+
+
+Resources1× 0.5× 0.25×Rerun
