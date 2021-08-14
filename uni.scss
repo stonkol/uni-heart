@@ -70,7 +70,8 @@ body {
   0% {fill: white;}
   20% {fill: white;}
   31% {fill: red;}
-  100% {//k: black;} 
+  100% {//k: black;
+  } 
 }
 
 #text {
@@ -79,19 +80,23 @@ body {
   cursor: help; /* avoid cursor change to caret */
   /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
-
-
-
-
 /* opacity 0 to 100 for the text at hte beginning */
-#hidedText:hover{
+#text:hover {
   transition-duration: 0.3s ease;
-	fill-opacity: 1;
+  opacity: 1;
 }
 
 
+/******** When click the FILL the "hand" grab **********/
 
-/* pop out effect at the beginning https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a-pop-out-effect */
+
+
+
+
+
+/********** POP OUT FX (at the beginning) ************* 
+https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a-pop-out-effect 
+*****************************************************/
 .popout {
   animation: popout 0.69s ease;
   -webkit-animation: popout 0.69s ease;
