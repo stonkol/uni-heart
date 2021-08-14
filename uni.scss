@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @mixin unselectable {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -43,7 +42,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #fefbe7; //#6666FF;
-  font-family: 'Palette Mosaic', cursive;
+  font-family: 'Nunito', sans-serif;
   font-size: 7px;
 }
 // made smaller when is computer screen
