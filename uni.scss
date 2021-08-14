@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
 
 @mixin unselectable {
   -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 @mixin flexbox() {
   display: -webkit-box;
@@ -33,49 +33,53 @@
   cursor: not-allowed;
 }
 body {
-  //@include flexbox();
-  //@include align-items(center);
-  //@include justify-content(center);
-  margin: 37px;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  margin: 50px;
   padding: 0;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#FEFBE7; //#6666FF;
-font-family: 'Josefin Slab', serif;
-  font-size: 10px;
+  background-color: #fefbe7; //#6666FF;
+  font-family: 'Palette Mosaic', cursive;
+  font-size: 7px;
 }
 // made smaller when is computer screen
 @media all and (max-width: 400px) {
   body {
-    
-  }    
+  }
 }
 
-
 #IN {
-    cursor: grab;
-    animation-name: heartChange;  
-    animation-iteration-count: infinite;  
-    animation-duration: 1.6s; 
+  cursor: grab;
+  animation-name: heartChange;
+  animation-iteration-count: infinite;
+  animation-duration: 1.6s;
 }
 #HEART {
   cursor: help;
 }
-@keyframes heartChange {  
-  0% { fill: white;}
-  45% { fill: white; }
-  51% { fill: red;}
-  100% { k: black; } // 
+@keyframes heartChange {
+  0% {
+    fill: white;
+  }
+  45% {
+    fill: white;
+  }
+  51% {
+    fill: red;
+  }
+  100% {
+    k: black;
+  } //
 }
 
-#text { 
-  @include unselectable();    /*to make the text unselectable*/
+#text {
+  @include unselectable(); /*to make the text unselectable*/
   color: white;
-    cursor: help; /* avoid cursor change to caret */
-/* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
+  cursor: help; /* avoid cursor change to caret */
+  /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
-
-
 /* made smaller when is computer screen*/

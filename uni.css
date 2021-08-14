@@ -1,18 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
 * {
   cursor: not-allowed;
 }
 
 body {
-  margin: 37px;
+  display: flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  margin: 50px;
   padding: 0;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FEFBE7;
-  font-family: 'Josefin Slab', serif;
-  font-size: 10px;
+  background-color: #fefbe7;
+  font-family: 'Palette Mosaic', cursive;
+  font-size: 7px;
 }
 
 #IN {
