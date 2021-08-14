@@ -35,29 +35,67 @@
       "
     >
       <!-------FILL HEART------->
+      <g transform="translate(36 40)">
       <path
         fill="#F4F6F6"
-        id="IN"
+        id="fill"
+        class="popout"
+        transform="translate(-50 -50)" 
         d="M155.074,43.597C178.882,21.419 226.5,21.419 250.309,42.32C274.118,63.222 274.118,105.025 250.309,146.828C233.642,178.181 190.787,209.533 155.074,230.435C119.361,209.533 76.505,178.181 59.839,146.828C36.03,105.025 36.03,63.222 59.839,42.32C83.648,21.419 131.265,21.419 155.074,43.597Z"
         style="fill: white; opacity: 0.3; stroke: none; stroke-width: 60px"
       />
-
+      <animateTransform 
+      attributeName="transform" 
+      type="scale" 
+      values="1; 1.2; 1.04; 1.1; 1.1; 1;" 
+      dur="1.6s" 
+      repeatCount="indefinite"
+      additive="sum">      
+      </animateTransform>
+    </g>
       <!-------OUTLINE HEART------->
       <path
         fill="#F4F6F6"
-        id="HEART"
+        id="outline"
+        class="popout"
         d="M155.074,43.597C178.882,21.419 226.5,21.419 250.309,42.32C274.118,63.222 274.118,105.025 250.309,146.828C233.642,178.181 190.787,209.533 155.074,230.435C119.361,209.533 76.505,178.181 59.839,146.828C36.03,105.025 36.03,63.222 59.839,42.32C83.648,21.419 131.265,21.419 155.074,43.597Z"
-        style="fill: none; stroke: red; stroke-width: 23px"
+        style="fill: none; stroke: rgb(211, 10, 10); stroke-width: 23px"
       />
 
       <!----------TEXT---------->
       <text>
-        <textPath id="text" href="#HEART">
-          Unicode Uniform Unipapa Uni38 Uniform Unicelula Uniqlo Uni38 United
-          Nations
+        <textPath id="hidedText" href="#outline" fill="white" opacity="0">
+          🅾️ Unicode Uniform Unipapa Uni38-Sisenoo Uniform Unicelula Uniqlo United
+            Nations Uni President Universidad United Colors of Benetton Unison UK...
         </textPath>
-        <!----------more unis: United Colors of Benetton  Uni President Universidad Unidas Podríamos Uni...---------->
+
+        <textPath id="text" href="#outline" fill="white" opacity="0.80">
+        <!-- for svg the color="white" doens't work, SVG only use fill and stroke"-->
+        
+        <animate 
+        id="anim2"
+        attributeType="xml"
+        attributeName="fill-opacity" 
+        begin="0s" 
+        values="0.3;0.6;0.7;0.75;0.8" 
+        dur="3.2s"
+        repeatCount="indefinite" 
+  />
+          <!--attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"-->
+          
+          🅾️ Unicode Uniform Unipapa Uni38-Sisenoo Uniform Unicelula Uniqlo United
+            Nations Uni President Universidad United Colors of Benetton Unison UK...
+            <!----------more unis: United Colors of Benetton Unidas Podríamos ---------->
+        </textPath>
       </text>
+
+
+
+
+     
     </svg>
+
+
+ 
   </body>
 </html>

@@ -14,23 +14,21 @@ body {
   -ms-flex-pack: center;
   margin: 50px;
   padding: 0;
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fefbe7;
+  background-color: #c6e6fa;
   font-family: 'Nunito', sans-serif;
-  font-size: 7px;
+  font-size: 10px;
 }
 
-#IN {
+#fill {
   cursor: grab;
   animation-name: heartChange;
   animation-iteration-count: infinite;
   animation-duration: 1.6s;
 }
 
-#HEART {
+#outline {
   cursor: help;
 }
 
@@ -38,24 +36,58 @@ body {
   0% {
     fill: white;
   }
-  45% {
+  20% {
     fill: white;
   }
-  51% {
+  31% {
     fill: red;
   }
   100% {
-    k: black;
   }
 }
 
 #text {
   user-select: none;
   /*to make the text unselectable*/
-  color: white;
   cursor: help;
   /* avoid cursor change to caret */
   /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
 
-/* made smaller when is computer screen*/
+#text:hover {
+  transition-duration: 0.3s ease;
+  opacity: 1;
+}
+
+/* opacity 0 to 100 for the text at hte beginning */
+.emerge {
+  animation: emerge 1s ease;
+  -webkit-animation: emerge 1s ease;
+}
+
+@keyframes emerge {
+  from {
+    transform: opacity(0);
+  }
+  to {
+    transform: opacity(1);
+  }
+}
+
+/* pop out effect at the beginning https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a-pop-out-effect */
+.popout {
+  animation: popout 0.69s ease;
+  -webkit-animation: popout 0.69s ease;
+}
+
+@keyframes popout {
+  from {
+    transform: scale(0.1);
+  }
+  66% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,3 +1,4 @@
+//Pulse animation from: https://codepen.io/ekfuhrmann/pen/ZEKKKEe?editors=1100
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @mixin unselectable {
   -webkit-user-select: none;
@@ -28,6 +29,7 @@
 }
 
 
+
 * {
   cursor: not-allowed;
 }
@@ -37,48 +39,102 @@ body {
   @include justify-content(center);
   margin: 50px;
   padding: 0;
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fefbe7; //#6666FF;
+ // justify-content: center;
+ // align-items: center;
+  background-color: #c6e6fa; 
   font-family: 'Nunito', sans-serif;
-  font-size: 7px;
+  font-size: 10px;
 }
-// made smaller when is computer screen
+
+
 @media all and (max-width: 400px) {
   body {
+
   }
 }
 
-#IN {
+#fill {
   cursor: grab;
   animation-name: heartChange;
   animation-iteration-count: infinite;
   animation-duration: 1.6s;
+  box-shadow: inset 11em 2em 33px #333652;
 }
-#HEART {
+#outline {
   cursor: help;
+  
 }
 @keyframes heartChange {
-  0% {
-    fill: white;
-  }
-  45% {
-    fill: white;
-  }
-  51% {
-    fill: red;
-  }
-  100% {
-    k: black;
-  } //
+  0% {fill: white;}
+  20% {fill: white;}
+  31% {fill: red;}
+  100% {//k: black;} 
 }
 
 #text {
   @include unselectable(); /*to make the text unselectable*/
-  color: white;
+  //color: white;
   cursor: help; /* avoid cursor change to caret */
   /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
-/* made smaller when is computer screen*/
+
+
+
+
+/* opacity 0 to 100 for the text at hte beginning */
+#hidedText:hover{
+  transition-duration: 0.3s ease;
+	fill-opacity: 1;
+}
+
+
+
+/* pop out effect at the beginning https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a-pop-out-effect */
+.popout {
+  animation: popout 0.69s ease;
+  -webkit-animation: popout 0.69s ease;
+}
+@keyframes popout {
+  from{transform:scale(0.1)}
+  66%{transform:scale(1.1)}
+  to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+  from{-webkit-transform:scale(0.1)}
+  66%{-webkit-transform:scale(1.1)}
+  to{-webkit-transform:scale(1)}
+}
+
+
+
+
+/********** SVG PULSE ANIMATION ******/
+circle {
+  stroke: black; 
+  stroke-width: 2px;
+  stroke-opacity: 1;
+}
+
+.pulse {
+  fill: white;
+  fill-opacity: 0;
+  transform-origin: 50% 50%;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    stroke-width: 3px;
+    stroke-opacity: 1;
+    transform: scale(0.3);
+  }
+  to {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(2);
+  }
+}
