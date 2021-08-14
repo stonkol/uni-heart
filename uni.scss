@@ -29,17 +29,28 @@
 }
 
 
-
+html, body {
+  width: 100%;
+  height: 100%;
+}
 * {
-  cursor: not-allowed;
+  cursor: wait;
+  margin: 0px;
+  padding: 0px;
+}
+*:active{
+  cursor: no-drop
 }
 body {
   @include flexbox();
   @include align-items(center);
   @include justify-content(center);
-  margin: 50px;
-  padding: 0;
-  height: 100vh;
+
+  top: 0;
+  margin: 3vh;
+  padding: 0px;
+  padding-right: 3vw;
+//  height: 100vh;
   display: flex;
  // justify-content: center;
  // align-items: center;
@@ -47,12 +58,21 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: 10px;
 }
-
-
-@media all and (max-width: 400px) {
+@media all and (max-width: 600px) {
   body {
-
+      margin: 0vh;
+    // padding-right: 2vw;
+      background-color: #5aaee3; 
   }
+}
+
+
+
+#outline {
+  cursor: help;
+}
+#outline:active {
+  cursor: zoom-in;
 }
 
 #fill {
@@ -62,10 +82,6 @@ body {
   animation-duration: 1.6s;
   box-shadow: inset 11em 2em 33px #333652;
 }
-#outline {
-  cursor: help;
-  
-}
 @keyframes heartChange {
   0% {fill: white;}
   20% {fill: white;}
@@ -74,22 +90,32 @@ body {
   } 
 }
 
+
+
 #text {
   @include unselectable(); /*to make the text unselectable*/
-  //color: white;
   cursor: help; /* avoid cursor change to caret */
   /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
-/* opacity 0 to 100 for the text at hte beginning */
 #text:hover {
   transition-duration: 0.3s ease;
   opacity: 1;
+  cursor: none;
+}
+#text:active {
+  cursor: help;
 }
 
 
 /******** When click the FILL the "hand" grab **********/
-
-
+#fill:active{
+  fill: rgb(254, 0, 0);
+  cursor: grabbing;
+}
+/******* Whn hover FILL  change text color to red ****************/
+#fill:hover #text{
+  fill: red;
+}
 
 
 
