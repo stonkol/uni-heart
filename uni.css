@@ -74,10 +74,6 @@ body {
   }
 }
 
-fill:hover {
-  opacity: 0;
-}
-
 #text {
   user-select: none;
   /*to make the text unselectable*/
