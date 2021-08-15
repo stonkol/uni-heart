@@ -39,10 +39,11 @@ html{
   cursor: wait;
   margin: 0px;
   padding: 0px;
+  &:active{
+    cursor: no-drop
+  }
 }
-*:active{
-  cursor: no-drop
-}
+
 body {
   @include flexbox();
   @include align-items(center);
@@ -68,14 +69,16 @@ body {
 }
 
 
-
+svg{
+  height: 90vh;
+}
 #outline {
   cursor: help;
   text-shadow: 3px 3px 2px 10px rgba(0, 0, 0, 0.317);
   fill:red;
-}
-#outline:active {
-  cursor: zoom-in;
+  &:active {
+    cursor: zoom-in;
+  }
 }
 #shadow:hover{
   filter: drop-shadow(14px 14px 1px #b71c1c);
@@ -87,6 +90,16 @@ body {
   animation-name: heartChange;
   animation-iteration-count: infinite;
   animation-duration: 1.6s;
+  /******** When click the FILL the "hand" grab **********/
+  &:active{
+    fill: rgb(254, 0, 0);
+    cursor: grabbing;
+    transition: .4s ease;
+  }
+/******* Whn hover FILL  change text color to red ****************/
+//#fill:hover #text{
+//  fill: red;
+//}
 }
 @keyframes heartChange {
   0% {fill: rgba(255, 255, 255, 0);}
@@ -106,30 +119,68 @@ body {
   cursor: help; /* avoid cursor change to caret */
   /* more types of cursor -> cursor: not-allowed; cursor: zoom-in; cursor: grab; 
   cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
+  &:hover {
+    transition: 0.5s ease;
+    opacity: 1;
+    cursor: none;
+    text-shadow: 0.3px 0.3px 2px rgba(0, 0, 0, 0.317); 
+  }
+  &:active {
+    cursor: help;
+    transition:  0.6s ease;
+  }
 }
-#text:hover {
-  transition-duration: 0.3s ease;
-  opacity: 1;
-  cursor: none;
-  text-shadow: 0.3px 0.3px 2px rgba(0, 0, 0, 0.317); 
+
+
+
+p {
+  position: absolute;
+  bottom: 0.3em;
+  font-size: 2em;
+ /* :hover{
+    font-size: 1.1em;
+    transition:  0.3s ease;
+  }*/
 }
-#text:active {
-  cursor: help;
+
+a {
+  text-decoration: none;
+}
+.background-slide {
+  position: relative;
+  padding-bottom: 2px;
+  color: #686868;
+  z-index: 3;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: -7px;
+    width: 0%;
+    height: 1.6em;
+    display: block;
+    transition: width .44s ease-in-out;
+    
+    background: rgb(249, 75, 75);
+    
+    z-index: -1;
+    content: '';
+  }
+  &:hover {
+    color: black;
+    content: 'NOT ME!';
+    &:after {
+      width: 112%;
+    }
+  }
 }
 
 
 
 
 
-/******** When click the FILL the "hand" grab **********/
-#fill:active{
-  fill: rgb(254, 0, 0);
-  cursor: grabbing;
-}
-/******* Whn hover FILL  change text color to red ****************/
-//#fill:hover #text{
-//  fill: red;
-//}
+
+
 
 
 
