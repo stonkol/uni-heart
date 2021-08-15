@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-html, body {
+html {
   width: 100%;
   height: 100%;
 }
@@ -23,29 +23,34 @@ body {
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  top: 0;
   margin: 3vh;
-  padding: 0px;
-  padding-right: 3vw;
+  padding: 0px auto;
+  height: 100%;
   display: flex;
-  background-color: #c6e6fa;
+  background-color: #b1e2fa;
   font-family: 'Nunito', sans-serif;
   font-size: 10px;
 }
 
 @media all and (max-width: 600px) {
   body {
-    margin: 0vh;
-    background-color: #5aaee3;
+    margin: 0 auto;
+    background-color: #b8d2da;
   }
 }
 
 #outline {
   cursor: help;
+  text-shadow: 3px 3px 2px 10px rgba(0, 0, 0, 0.317);
+  fill: red;
 }
 
 #outline:active {
   cursor: zoom-in;
+}
+
+#shadow:hover {
+  filter: drop-shadow(14px 14px 1px #b71c1c);
 }
 
 #fill {
@@ -53,21 +58,24 @@ body {
   animation-name: heartChange;
   animation-iteration-count: infinite;
   animation-duration: 1.6s;
-  box-shadow: inset 11em 2em 33px #333652;
 }
 
 @keyframes heartChange {
   0% {
-    fill: white;
+    fill: rgba(255, 255, 255, 0);
   }
   20% {
-    fill: white;
+    fill: rgba(255, 255, 255, 0);
   }
   31% {
-    fill: red;
+    fill: #ff5c5c;
   }
   100% {
   }
+}
+
+fill:hover {
+  opacity: 0;
 }
 
 #text {
@@ -75,13 +83,15 @@ body {
   /*to make the text unselectable*/
   cursor: help;
   /* avoid cursor change to caret */
-  /* more types of cursor cursor: not-allowed; cursor: zoom-in; cursor: grab; cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
+  /* more types of cursor -> cursor: not-allowed; cursor: zoom-in; cursor: grab; 
+  cursor: crosshair; cursor: wait; cursor: help; cursor: default; cursor: pointer; */
 }
 
 #text:hover {
   transition-duration: 0.3s ease;
   opacity: 1;
   cursor: none;
+  text-shadow: 0.3px 0.3px 2px rgba(0, 0, 0, 0.317);
 }
 
 #text:active {
@@ -95,11 +105,7 @@ body {
 }
 
 /******* Whn hover FILL  change text color to red ****************/
-#fill:hover #text {
-  fill: red;
-}
-
-/********** POP OUT FX (at the beginning) ************* 
+/********** POP OUT FX (at the beginning) ********* 
 https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a-pop-out-effect 
 *****************************************************/
 .popout {
@@ -119,7 +125,9 @@ https://stackoverflow.com/questions/14542429/how-do-i-animate-this-box-to-have-a
   }
 }
 
-/********** SVG PULSE ANIMATION ******/
+/**         WORKING IN PROGRESS    **/
+/********** SVG PULSE ANIMATION ********
+*******************************************/
 circle {
   stroke: black;
   stroke-width: 2px;
